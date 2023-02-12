@@ -18,14 +18,14 @@ function App() {
 
 <BrowserRouter>
  <Routes>
-  {/* <Route path='/' element={<Welcome/>}/>
+  <Route path='/' element={<Welcome/>}/>
   <Route path='/signup' element={<Signup/>}/>
-  <Route path='/login' element={<Login/>}/> */}
-  {/* <Route path='/admin' element={<Admin/>}/>
-  <Route path='/user' element={<User/>}/> */}
+  <Route path='/login' element={<Login/>}/>
+  <Route path='/home' element={<Home />}/>
+
    {/* <Route path='/' element={<AdminSetting/>}/> */}
    {/* <Route path='/' element={<AdminLastScreen/>}/> */}
-   <Route path='/' element={<AdminFirst/>}/>
+   {/* <Route path='/' element={<AdminFirst/>}/> */}
    {/* <Route path='/' element={<AdminSecondScreen/>}/> */}
 
  </Routes>
