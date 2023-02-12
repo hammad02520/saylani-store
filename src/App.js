@@ -22,25 +22,16 @@ function App() {
   <Route path='/signup' element={<Signup/>}/>
   <Route path='/login' element={<Login/>}/>
   <Route path='/home' element={<Home />}/>
-
-   {/* <Route path='/' element={<AdminSetting/>}/> */}
-   {/* <Route path='/' element={<AdminLastScreen/>}/> */}
-   {/* <Route path='/' element={<AdminFirst/>}/> */}
-   {/* <Route path='/' element={<AdminSecondScreen/>}/> */}
-
+  <Route path='/shoppingcart' element={<ShoppingCart />}/>
+  <Route path='/setting' element={<Setting />}/>
+  <Route path='/adminsetting' element={<AdminSetting/>}/>
+  <Route path='/adminlastscreen' element={<AdminLastScreen/>}/>
+  <Route path='/adminfirstscreen' element={<AdminFirst/>}/>
+  <Route path='/adminsecondscreen' element={<AdminSecondScreen/>}/>
  </Routes>
  </BrowserRouter>
 
 
-
-
-
-    //  <Welcome />
-    // <Signup />
-    // <Login />
-    //  <Home />
-    // <ShoppingCart />
-    // <Setting />
    
   );
 }
