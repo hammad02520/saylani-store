@@ -6,8 +6,10 @@ import Rectangle from '../assets/Rectangle.png'
 import Rectangle3 from '../assets/Rectangle2.png'
 import Rectangle4 from '../assets/Rectangle4.png'
 import Meet from '../assets/meet2.png'
+import { useNavigate } from "react-router-dom";
 import FooterTap from "./footertab";
 const Home = () =>{
+    const navigate = useNavigate()
     return(
         <div className="main-container-home">
             <div className="header-home">
@@ -15,7 +17,9 @@ const Home = () =>{
                     <img src={logoname} />
                     <h3>Discount Store</h3>
                     </div>
-                   <AiOutlineShoppingCart className="cart-icon" />
+                   <AiOutlineShoppingCart onClick={()=>{
+                    navigate("/shoppingcart")
+                   }} className="cart-icon" />
             </div>
             <div className="homebanner-logo">
                 <img src={HomebannerLogo} />
