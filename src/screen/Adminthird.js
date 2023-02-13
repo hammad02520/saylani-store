@@ -3,11 +3,12 @@ import backArrow from '../assets/backarrow.jpeg'
 import adminImage from '../assets/Ellipse.png'
 import { TfiMenuAlt } from "react-icons/tfi";
 import { Select } from 'antd';
-
+import AdminFooterTap from './adminFooter';
+import {  useNavigate } from "react-router-dom";
 
 const AdminLastScreen = () => {
 
-
+    const navigate = useNavigate()
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     };
@@ -24,7 +25,9 @@ const AdminLastScreen = () => {
                     </div>
                 </div>
                 <div className='menu_icon'>
-                    <TfiMenuAlt />
+                    <TfiMenuAlt onClick={()=>{
+                        navigate("/adminsetting")
+                    }} />
                 </div>
             </div>
             <div className='order_text'>
@@ -63,6 +66,7 @@ const AdminLastScreen = () => {
                     </div>
                 </div>
             </div>
+            <AdminFooterTap />
         </div>
     )
 }

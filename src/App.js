@@ -10,6 +10,7 @@ import AdminSetting from './screen/AdminSetting';
 import AdminSecondScreen from './screen/AdminSecondPage';
 import AdminLastScreen from './screen/Adminthird';
 import AdminFirst from './screen/Adminfirst';
+import AdminPage from './config/privateroutes';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
 
 <BrowserRouter>
  <Routes>
+  {/* <Route path='/adminfirstscreen' element={<AdminPage Component={AdminFirst}/>} /> */}
   <Route path='/' element={<Welcome/>}/>
   <Route path='/signup' element={<Signup/>}/>
   <Route path='/login' element={<Login/>}/>

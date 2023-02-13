@@ -773,3 +773,14 @@ margin-top: 55px;
 }.alert{
   color: red !important;
 }
+.signup-input:focus{
+  border: none;
+}
+input{
+  outline: none;
+}
+.admin_first_screen,.setting_main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

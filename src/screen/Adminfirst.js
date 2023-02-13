@@ -3,7 +3,10 @@ import backArrow from '../assets/backarrow.jpeg'
 import adminImage from '../assets/Ellipse.png'
 import cardImage from '../assets/cardimage.jpeg'
 import { TfiMenuAlt } from "react-icons/tfi";
+import AdminFooterTap from './adminFooter';
+import {  useNavigate } from "react-router-dom";
 const AdminFirst = () => {
+  const navigate = useNavigate()
   return (
     <div className='admin_first_screen'>
       <div className='main_admin_header'>
@@ -16,7 +19,9 @@ const AdminFirst = () => {
           </div>
         </div>
         <div className='menu_icon'>
-          <TfiMenuAlt />
+          <TfiMenuAlt onClick={()=>{
+            navigate("/adminsetting")
+          }} />
         </div>
       </div>
       <div className='admin_first_body'>
@@ -34,6 +39,7 @@ const AdminFirst = () => {
           </div>
         </div>
       </div>
+      <AdminFooterTap />
     </div>
   )
 }

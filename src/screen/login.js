@@ -13,13 +13,18 @@ const Login = () => {
       password: "",
     })
     const Loginhandeler = () => {
-        if (!value.name || !value.email || !value.password) {
+        if (!value.email || !value.password) {
             seterrorMessage("Fill all Fields correctly")
             return;
           }
       signInWithEmailAndPassword(auth, value.email, value.password)
         .then((res) => {
-          navigate('/home')
+          let uid = auth.currentUser.uid
+          console.log(res)
+        if(auth.currentUser.uid.email == "admin@gmail.com"){
+          navigate('/home') }else{
+            navigate('/adminfirstscreen')
+          }
         }).catch((error) => {
           console.log("Error===>", error)
           seterrorMessage(error.message)

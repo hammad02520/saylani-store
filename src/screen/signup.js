@@ -6,24 +6,28 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsEyeSlash } from "react-icons/bs";
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useNavigate } from "react-router-dom";
-import { auth } from "../config/firebase"
+import { getAuth,  } from "firebase/auth";
+// import { auth } from "../config/firebase"
 const Signup = () =>{
     const navigate = useNavigate()
+    const auth = getAuth()
     const [errorMessage, seterrorMessage] = useState("")
     const [value, setValue] = useState({
-     email: "",
+    username:"",
+    contact:"",
+    email: "",
      password: "",
-     contact:"",
-     username:""
+     
+    
    })
        const SignUphandeler = () => {
-        if (!value.username || !value.email || !value.password || !value.contact) {
+        if (!value.username | !value.contact |  !value.email  | !value.password   ) {
           seterrorMessage("Fill all Fields correctly")
           return;
         }
         createUserWithEmailAndPassword(auth, value.email, value.password)
           .then((res) => {
-            navigate('/hone')
+            navigate('/home')
           }).catch((error) => {
             console.log("Error===>", error)
             seterrorMessage(error.message)
@@ -59,7 +63,7 @@ const Signup = () =>{
             </div>
             <div className="signup-input-div">
             <input  onChange={(e) =>
-              setValue((prev) => ({ ...prev, email: e.target.value }))
+              setValue((prev) => ({ ...prev, password: e.target.value }))
             } type="password" className="signup-input" placeholder="Password" />
             <BsEyeSlash />
             </div>

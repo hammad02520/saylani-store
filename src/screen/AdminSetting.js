@@ -1,9 +1,11 @@
 import React from 'react'
 import settingImage from '../assets/Ellipse.png'
 import fileImage from '../assets/fileuplode.jpeg'
-
-
+import AdminFooterTap from './adminFooter';
+import { getAuth, signOut } from "firebase/auth";
+import {  useNavigate } from "react-router-dom";
 const AdminSetting = () => {
+    const navigate = useNavigate()
     return (
         <div className='setting_main'>
             <div className='setting'>
@@ -46,9 +48,21 @@ const AdminSetting = () => {
                 {/* <div className='setting_btn'>
                     <button>Log Out</button>
                 </div> */}
-                <div className='started-button-div st-div admin margin-bottom' ><button className='started-button'>Logout</button> 
-           </div>
+                <div className='started-button-div st-div admin margin-bottom' ><button onClick={() => {
+
+                    const auth = getAuth();
+                    signOut(auth).then(() => {
+                        console.log('logout')
+                    }).then(() => {
+                        navigate('/')
+                    }).catch((error) => {
+                        console.log(error)
+                    });
+
+                }} className='started-button'>Logout</button>
+                </div>
             </div>
+            <AdminFooterTap />
         </div>
     )
 }
